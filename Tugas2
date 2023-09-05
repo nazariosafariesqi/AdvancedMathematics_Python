@@ -1,0 +1,285 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/nazariosafariesqi/AdvancedMathematics_Python/blob/main/Tugas2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "uvd4J-JSXHyr"
+      },
+      "outputs": [],
+      "source": [
+        "import sympy as sp\n",
+        "import numpy as np\n",
+        "from math import sqrt"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Advanced Mathematics and Mathematics Programming**\n",
+        "Latian Materi 1a : Derivative"
+      ],
+      "metadata": {
+        "id": "HcgyflW6a7KF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x, t, z = sp.symbols('x t z')"
+      ],
+      "metadata": {
+        "id": "rFn5IwQ3YcpZ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "a. f(x) = 6"
+      ],
+      "metadata": {
+        "id": "UubZWgKCYm-U"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "f_x = 6\n",
+        "df_dx = sp.diff(f_x, x)\n",
+        "print(\"Turunan f(x) terhadap x:\", df_dx)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "L2UvYi-YYloF",
+        "outputId": "c021f6ab-f1d5-4930-9c3f-c070ff4f6d99"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Turunan f(x) terhadap x: 0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "b. V(t) = 3 - 14t"
+      ],
+      "metadata": {
+        "id": "dxUD6S4gYuqc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "V_t = 3 - 14*t\n",
+        "dV_dt = sp.diff(V_t, t)\n",
+        "print(\"Turunan V(t) terhadap t:\", dV_dt)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wUXxIW5IYtSl",
+        "outputId": "15926f7d-a950-4da4-a3e9-44cdc978c285"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Turunan V(t) terhadap t: -14\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "c. Q(t) = 10 + 5t - t^2"
+      ],
+      "metadata": {
+        "id": "KNHXs-1DY2fw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Q_t = 10 + 5*t - t**2\n",
+        "dQ_dt = sp.diff(Q_t, t)\n",
+        "print(\"Turunan Q(t) terhadap t:\", dQ_dt)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ziRCvc7sY48u",
+        "outputId": "9cad01c2-4b05-4d7c-80c3-5221f3ed6af3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Turunan Q(t) terhadap t: 5 - 2*t\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "d. R(z) = 5/z"
+      ],
+      "metadata": {
+        "id": "fM7RdcXFZXeE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "R_z = 5/z\n",
+        "dR_dz = sp.diff(R_z, z)\n",
+        "print(\"Turunan R(z) terhadap z:\", dR_dz)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "r_RYE8NwZPaN",
+        "outputId": "0362c1a6-eda1-49f6-e5d7-9884556cf01f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Turunan R(z) terhadap z: -5/z**2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "e. Z(t) = akar(3t) - 4"
+      ],
+      "metadata": {
+        "id": "fRIQS_iWZrLE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import sympy as sp\n",
+        "from sympy import sqrt\n",
+        "\n",
+        "# Definisikan variabel t\n",
+        "t = sp.symbols('t')\n",
+        "\n",
+        "# Definisikan fungsi Z(t)\n",
+        "Z_t = sqrt(3*t) - 4\n",
+        "\n",
+        "# Hitung turunan Z(t) terhadap t\n",
+        "dZ_dt = sp.diff(Z_t, t)\n",
+        "\n",
+        "# Tampilkan turunan dalam bentuk ekspresi matematika\n",
+        "print(\"Turunan Z(t) terhadap t:\", dZ_dt)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "w-X3qIkDZrXL",
+        "outputId": "df24fab8-7e7b-4eab-f10c-521a9fa7bee8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Turunan Z(t) terhadap t: sqrt(3)/(2*sqrt(t))\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "f. f(x) = akar 1 - 9x"
+      ],
+      "metadata": {
+        "id": "zP9Yl3lKaN0u"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "f_x = sp.sqrt(1 - 9*x)\n",
+        "df_dx = sp.diff(f_x, x)\n",
+        "print(\"Turunan f(x) terhadap x:\", df_dx)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hK5XJAwDaNnU",
+        "outputId": "3964e492-3ef2-4622-c8bd-4f3de229a401"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Turunan f(x) terhadap x: -9/(2*sqrt(1 - 9*x))\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "Q-8vYqYDbKby"
+      }
+    }
+  ]
+}
